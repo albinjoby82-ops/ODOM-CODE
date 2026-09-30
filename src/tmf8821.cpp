@@ -358,8 +358,9 @@ esp_err_t Tmf8821::assignAddress() {
     ESP_RETURN_ON_ERROR(wr8(kRegI2cAddr, static_cast<uint8_t>(runAddr_ << 1)),
                         kTag, "addr reg");
 
-    // Zero applies the address change unconditionally.
-    ESP_RETURN_ON_ERROR(wr8(kRegI2cAddrChg, 0x00), kTag, "addr change gate");
+
+    constexpr uint8_t kAddrChangeGpio0Low = 0x04;
+    ESP_RETURN_ON_ERROR(wr8(kRegI2cAddrChg, kAddrChangeGpio0Low), kTag, "addr change gate");
     ESP_RETURN_ON_ERROR(writeLoadedPage(), kTag, "write page for address");
 
     // The command status appears at the new address.

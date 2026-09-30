@@ -25,8 +25,8 @@ using gflib::operator""_r;
 // PCNT channels' default pull-ups are along for the ride and harmless.
 constexpr int kVertEncAPin  = 1;
 constexpr int kVertEncBPin  = 2;
-constexpr int kHorizEncAPin = 4;
-constexpr int kHorizEncBPin = 5;
+constexpr int kHorizEncAPin = 3;
+constexpr int kHorizEncBPin = 4;
 
 // BNO085 UART-RVC. RX only: RVC is one-way and the part accepts nothing back.
 // The P0 jumper on the breakout must be bridged or it comes up in I2C mode
@@ -41,9 +41,9 @@ constexpr int kRs485TxPin = 17;
 constexpr int kRs485RxPin = 18;
 constexpr int kRs485DePin = 21;
 
-// Stage B. Listed here so the pin budget is decided once, not twice.
-constexpr int kI2cSdaPin = 15;
-constexpr int kI2cSclPin = 16;
+
+constexpr int kI2cSdaPin = 16;
+constexpr int kI2cSclPin = 15;
 // Harness order, not numeric order
 // The array is indexed by TofIndex alongside kTofAddrs and kTofMounts
 // the wiring is absorbed here rather than by renumbering the enum.
