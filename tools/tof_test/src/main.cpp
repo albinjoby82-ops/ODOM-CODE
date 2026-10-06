@@ -27,7 +27,7 @@ constexpr int kSclPin = 15;
 
 constexpr int kCount = 4;
 constexpr const char* kName[kCount] = {"FRONT", "RIGHT", "REAR ", "LEFT "};
-constexpr int kEnPins[kCount] = {11, 12, 14, 13};
+constexpr int kEnPins[kCount] = {4, 12, 1, 2};
 constexpr uint8_t kAddrs[kCount] = {0x42, 0x43, 0x44, 0x45};
 
 constexpr uint32_t kEnumHz = 100000;

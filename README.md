@@ -12,10 +12,8 @@ ESP-IDF.
 
 ## Pin map (V2 PCB)
 
-> **The V2 board and the firmware do not match yet.** The pins below are what
-> the V2 PCB is wired to. `include/pod_config.hpp` still has the V1 pins, so the
-> firmware will not work on V2 until it is updated (see
-> [Firmware changes still needed](#firmware-changes-still-needed)).
+These are the pins the V2 PCB is wired to, and what `include/pod_config.hpp`
+and `tools/tof_test` are set to.
 
 | Function | Signal | V2 GPIO | V1 GPIO | Changed |
 |---|---|---|---|---|
@@ -108,23 +106,11 @@ time. Leave INT, GPIO0 and GPIO1 on the sensor boards unconnected.
 The breakouts' own pull-up resistors are the only pull-ups on the bus, so at
 least one breakout's I2C pull-up jumper must be closed.
 
-## Firmware changes still needed
+## Changing a pin
 
-`include/pod_config.hpp` (and `tools/tof_test/src/main.cpp`, which copies the ToF
-pins):
-
-```cpp
-constexpr int kVertEncAPin  = 40;
-constexpr int kVertEncBPin  = 42;
-constexpr int kHorizEncAPin = 39;
-constexpr int kHorizEncBPin = 41;
-
-constexpr int kRs485DePin = 7;
-
-constexpr int kTofEnPins[4] = {4, 12, 1, 2};   // front, right, rear, left
-```
-
-See [PIN_CHANGES.md](PIN_CHANGES.md) for the history of each move.
+Every pin lives in `include/pod_config.hpp`. The ToF bench test keeps its own
+copy of the ToF pins in `tools/tof_test/src/main.cpp`, so change both. See
+[PIN_CHANGES.md](PIN_CHANGES.md) for the history of each move.
 
 ## Bench test for the ToF sensors
 

@@ -1,8 +1,8 @@
 # Pin changes (PCB rework)
 
-Pin reassignments made in the PCB editor. The firmware has **not** been updated
-yet: `include/pod_config.hpp` (and the copy in `tools/tof_test/src/main.cpp`
-where relevant) still has the old pins.
+Pin reassignments made in the PCB editor. They have been applied to
+`include/pod_config.hpp` and the copy in `tools/tof_test/src/main.cpp`; the
+"Firmware change needed" snippets below show what was changed.
 
 Board: ESP32-S3-DevKitC-1, **N8R8** module. GPIO33-37 are wired to the octal
 PSRAM inside the module and must not be used.
