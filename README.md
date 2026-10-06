@@ -13,7 +13,12 @@ ESP-IDF.
 ## Pin map (V2 PCB)
 
 These are the pins the V2 PCB is wired to, and what `include/pod_config.hpp`
-and `tools/tof_test` are set to.
+and `tools/tof_test` are set to. **8 pins moved from V1** (shown in bold below);
+the full list with the reasons is in [PIN_CHANGES.md](PIN_CHANGES.md).
+
+> **V1 and V2 firmware are not interchangeable.** GPIO1, 2 and 4 were encoder
+> inputs on V1 and are ToF enable outputs on V2. Flash V2 firmware only on a V2
+> board. V1 firmware is commit `f138950`.
 
 | Function | Signal | V2 GPIO | V1 GPIO | Changed |
 |---|---|---|---|---|
